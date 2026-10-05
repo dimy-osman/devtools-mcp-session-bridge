@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "DevTools MCP Session Bridge",
+  "version": "1.2.0",
+  "description": "Turn the DevTools attach port on or off without quitting the browser.",
+  "action": {
+    "default_title": "DevTools MCP Session Bridge: off",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16-off.png",
+      "48": "icon48-off.png",
+      "128": "icon128-off.png"
+    }
+  },
+  "icons": {
+    "16": "icon16-off.png",
+    "48": "icon48-off.png",
+    "128": "icon128-off.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["alarms"],
+  "host_permissions": ["http://127.0.0.1:9334/*"]
+}

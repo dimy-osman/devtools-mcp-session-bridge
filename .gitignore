@@ -1,0 +1,7 @@
+*.log
+session-brave.on
+session-chrome.on
+session-access.on
+dtmsb-shim.exe
+dtmsb-shim.exe.bak
+dtmsb-shim.new.exe
