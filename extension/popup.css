@@ -52,9 +52,18 @@ button.off {
   color: #fafafa;
 }
 
-#actions.needs-restart #restart {
+#actions.needs-restart #restart,
+#actions.switch-down #restart {
   display: inline-flex;
   flex: 1.15;
+}
+
+#actions.switch-down #restart {
+  flex: 1;
+}
+
+#actions.switch-down #toggle {
+  display: none;
 }
 
 #actions.needs-restart #toggle {

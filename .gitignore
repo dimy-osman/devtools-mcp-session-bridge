@@ -5,3 +5,10 @@ session-access.on
 dtmsb-shim.exe
 dtmsb-shim.exe.bak
 dtmsb-shim.new.exe
+dtmsb-native.exe
+dtmsb-native.exe.bak
+dtmsb-native.new.exe
+dtmsb-native.json
+
+# Scratch scripts. Delete files when the step is done.
+_temp/

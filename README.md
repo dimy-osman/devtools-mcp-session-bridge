@@ -23,7 +23,7 @@ Windows, with Node.js and either Chrome, Brave, or both.
 powershell -NoProfile -ExecutionPolicy Bypass -File .\Install-DTMSB.ps1
 ```
 
-Then in each browser: `chrome://extensions` or `brave://extensions`, turn on Developer mode, and load the unpacked `extension` folder. Restart that browser once.
+Then in each browser: `chrome://extensions` or `brave://extensions`, turn on Developer mode, and load the unpacked `extension` folder. Reload the extension after each install. If the toolbar says the local switch is not running, use **Restart browser**. That quits the browser once, including the tray icon, and opens it again so the switch can start.
 
 ## MCP client
 

@@ -1,5 +1,18 @@
 const base = 'http://127.0.0.1:9334';
-const browser = navigator.userAgent.includes('Brave') ? 'brave' : 'chrome';
+
+async function detectBrowser() {
+  try {
+    if (navigator.brave && typeof navigator.brave.isBrave === 'function') {
+      if (await navigator.brave.isBrave()) return 'brave';
+    }
+  } catch {
+    /* use the other checks */
+  }
+  const brands = (navigator.userAgentData && navigator.userAgentData.brands) || [];
+  if (brands.some((item) => /brave/i.test(item.brand))) return 'brave';
+  if (/Brave/i.test(navigator.userAgent || '')) return 'brave';
+  return 'chrome';
+}
 
 function iconPath(on) {
   const name = on ? 'on' : 'off';
@@ -13,6 +26,7 @@ function iconPath(on) {
 async function paintIcon() {
   let on = false;
   try {
+    const browser = await detectBrowser();
     const res = await fetch(`${base}/status?browser=${browser}`);
     const body = await res.json();
     on = Boolean(body.enabled && body.proxyListening);
